@@ -49,7 +49,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 |25.10.2026/1551hrs|Analysis and evidence capture|
 |25.10.2026/2200hrs|Server destroyed to stop charges|
 
-![Attack Map, 24 hours](screenshots/attack-map-24h.jpg)
+![Attack Map, 24 hours](screenshots/attack-map-first-24hrs.jpg)
 
 
 
