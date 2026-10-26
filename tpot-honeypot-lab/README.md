@@ -59,9 +59,9 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 * Total events in 24 hours: 44346 events
 
-**Top source countries:** Iran · United States · France· The Nertherlands· Romania
+**Top source countries:** Iran · United States · France· The Netherlands· Romania
 
-**Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, TCP 1443
+**Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1443
 
 Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
 
@@ -88,8 +88,9 @@ Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
 ## 6\. Analysis
 
 * **Noise vs signal:** most traffic came from mass scanners and previously reported IPs, so it was background noise rather than targeted attacks.
-* **Interesting events:** \[the 1-3 events that mattered most and why]
-* **IP lookups:** \[3-5 IPs checked, with a one-line verdict each: research scanner, botnet, known abuser]
+* **Interesting events:**No single source dominated the spike.- **Credential guessing:** attempts used default and common credentials (`Administrator`, `admin`, `123456`, `admin123`), consistent with automated brute-force tools targeting Windows and generic admin accounts.- **Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
+* What did not happen:- **No malware downloads or exploit signatures were observed** in the 24-hour window.
+
 * **Caveat:** Suricata alerts are detections, not confirmed compromises.
 
 ## 7\. Lessons learned
