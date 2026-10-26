@@ -37,7 +37,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 * **Verified listening services** with `ss -tulpn`: honeypots run in Docker, real SSH on 64295, and Kibana, Elasticsearch and Logstash bound to localhost behind an nginx reverse proxy.
 * **Isolation:** no personal data, credentials or other infrastructure were stored on or reachable from the server.
 
-!\[Firewall rules](screenshots/firewall-rules.jpg)
+![Firewall rules](screenshots/firewall-rules.jpg)
 
 
 
@@ -49,7 +49,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 |25.10.2026/1551hrs|Analysis and evidence capture|
 |25.10.2026/2200hrs|Server destroyed to stop charges|
 
-!\[Attack Map, 24 hours](screenshots/attack-map-24h.jpg)
+![Attack Map, 24 hours](screenshots/attack-map-24h.jpg)
 
 
 
@@ -83,7 +83,7 @@ Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
 
 
 
-!\[Suricata alert categories](screenshots/suricata-histogram.jpg)
+![Suricata alert categories](screenshots/suricata-histogram.jpg)
 
 ## 6\. Analysis
 
