@@ -56,7 +56,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 
 
-##5\. Findings
+## 5\. Findings
 
 **Overview**
 
