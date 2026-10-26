@@ -45,10 +45,10 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 |Time|Event|
 |-|-|
-|24.10.2026/2150hrs|Server deployed, T-Pot installed, management access verified|
+|24.10.2026/2130hrs|Server deployed, T-Pot installed, management access verified|
 |24.10.2026/2200hrs|Honeypot port range opened to the internet|
 |+1 hour|43 events recorded on the Attack Map|
-|25.10.2026/1551hrs|Analysis and evidence capture|
+|25.10.2026/1545hrs|Analysis and evidence capture|
 |25.10.2026/2200hrs|Server destroyed to stop charges|
 ## 4\. Data Collection
 
