@@ -50,6 +50,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 |+1 hour|43 events recorded on the Attack Map|
 |25.10.2026/1551hrs|Analysis and evidence capture|
 |25.10.2026/2200hrs|Server destroyed to stop charges|
+## 4\. Data Collection
 
 ![Attack Map, 24 hours](screenshots/attack-map-first-24hours.jpg)
 
