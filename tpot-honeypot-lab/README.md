@@ -35,6 +35,8 @@ The server is deliberately vulnerable-looking, so the management side was locked
   * Honeypot port range (TCP/UDP 1-64000) opened to the internet only after the management side was verified.
   * Ports above 64000 left closed to the public.
 * **Verified listening services** with `ss -tulpn`: honeypots run in Docker, real SSH on 64295, and Kibana, Elasticsearch and Logstash bound to localhost behind an nginx reverse proxy.
+![DPS](screenshots/dps.jpg)
+
 * **Isolation:** no personal data, credentials or other infrastructure were stored on or reachable from the server.
 
 ![Firewall rules](screenshots/firewall-rules.jpg)
