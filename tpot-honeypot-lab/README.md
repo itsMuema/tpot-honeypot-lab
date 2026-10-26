@@ -88,7 +88,7 @@ Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
 ## 6\. Analysis
 
 * **Noise vs signal:** most traffic came from mass scanners and previously reported IPs, so it was background noise rather than targeted attacks.
-* **Interesting events:**No single source dominated the spike.- **Credential guessing:** attempts used default and common credentials (`Administrator`, `admin`, `123456`, `admin123`), consistent with automated brute-force tools targeting Windows and generic admin accounts.- **Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
+* **Interesting events:** No single source dominated the spike.- **Credential guessing:** attempts used default and common credentials (`Administrator`, `admin`, `123456`, `admin123`), consistent with automated brute-force tools targeting Windows and generic admin accounts.- **Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
 * What did not happen:- **No malware downloads or exploit signatures were observed** in the 24-hour window.
 
 * **Caveat:** Suricata alerts are detections, not confirmed compromises.
