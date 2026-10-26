@@ -71,7 +71,7 @@ Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
 
 **Malware or file download attempts:** No
 
-!\[Kibana dashboard](screenshots/kibana-overview.jpg)
+![Kibana dashboard](screenshots/kibana-overview.jpg)
 
 
 
