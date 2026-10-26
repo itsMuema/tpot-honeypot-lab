@@ -63,7 +63,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 **Top source countries:** Iran · United States · France· The Netherlands· Romania
 
-**Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1443
+**Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1433
 
 Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
 
