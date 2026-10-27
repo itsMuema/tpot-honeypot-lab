@@ -62,19 +62,13 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 **Overview**
 
-* Total events: 44346 events,recorded between the ports opening (24.10.2026 22:00) and the evidence capture (25.10.2026 15:45)
-
-
-**Top source countries:** Iran · United States · France· The Netherlands· Romania
-
-**Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1433
-
-**Top source IPs:** 217[.]218[.]34[.]63, 77[.]239[.]124[.]152, 80[.]94[.]95[.]109
-
-**Top Usernames attempted:** hadoop.Administrator,Admin.steam,devop
-**Top passwords attempted:** password,demo,123456,Admin@123,admin123
-
-**Malware or file download attempts:** None observed in the honeypot and Suricata views I reviewed
+* **Total events:** 44,346, recorded between the ports opening (24.10.2026 22:00) and the evidence capture (25.10.2026 15:45)
+* **Top source countries:** Iran, United States, France, Netherlands, Romania
+* **Top targeted services / ports:** SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1433
+* **Top source IPs:** 217[.]218[.]34[.]63, 77[.]239[.]124[.]152, 80[.]94[.]95[.]109
+* **Top usernames attempted:** hadoop, Administrator, admin, steam, devop
+* **Top passwords attempted:** password, demo, 123456, Admin@123, admin123
+* **Malware or file download attempts:** none observed in the honeypot and Suricata views I reviewed
 
 ![Kibana dashboard](tpot-honeypot-lab/screenshots/kibana-overview.jpg)
 
@@ -92,15 +86,25 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 ![Suricata alert categories](tpot-honeypot-lab/screenshots/suricata-histogram.jpg)
 
-## 6\. Analysis
+## 6. Analysis
 
 * **Noise vs signal:** traffic was spread across many sources with no single source dominating, and the pattern (steady volume around the clock, default credentials, common service ports) points to mass scanners rather than targeted attacks.
+* **Credential guessing:** attempts used default and common credentials (`Administrator`, `admin`, `123456`, `admin123`), consistent with automated brute-force tools targeting Windows and generic admin accounts.
+* **Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
+* **What did not happen:** no malware downloads or exploit signatures were observed in the capture window.
 
-**Credential guessing:** attempts used default and common credentials (`Administrator`, `admin`, `123456`, `admin123`), consistent with automated brute-force tools targeting Windows and generic admin accounts.- 
-**Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
-**What did not happen:** no malware downloads or exploit signatures were observed in the capture window.
+### MITRE ATT&CK mapping
 
-* **Caveat:** Suricata alerts are detections, not confirmed compromises.
+| Observed behavior | Technique |
+|-|-|
+| Default and common credential guessing against SSH, RDP and SMB | T1110 Brute Force |
+| Probing of SMB, SSH, RDP and SQL Server ports | T1046 Network Service Discovery |
+| Attempts against remote access services | T1021 Remote Services |
+
+### Caveats
+
+* Suricata alerts are detections, not confirmed compromises.
+* Source country shows where traffic came from, not who is behind it. Proxies, VPNs and compromised hosts are common, so geolocation is not attribution.
 
 ## 7\. Lessons learned
 
