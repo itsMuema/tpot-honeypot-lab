@@ -62,7 +62,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 **Overview**
 
-* Total events in 24 hours: 44346 events,recorded between the ports opening (24.10.2026 22:00) and the evidence capture (25.10.2026 15:45)
+* Total events: 44346 events,recorded between the ports opening (24.10.2026 22:00) and the evidence capture (25.10.2026 15:45)
 
 
 **Top source countries:** Iran · United States · France· The Netherlands· Romania
