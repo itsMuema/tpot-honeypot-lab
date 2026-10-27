@@ -19,7 +19,7 @@ Build and secure an internet-facing honeypot, collect real attack data, and prac
 |Resources|8 GB RAM (about 7.2 GiB usable), 150 GB disk|
 |Honeypot platform|T-Pot, Mini edition|
 |Monitoring|Kibana dashboards, T-Pot Attack Map, Suricata IDS|
-|Exposure window|24.10.2026/2130hrs to 25.10.2026/2200hrs 24hours 30Minutes|
+|Exposure window|24.10.2026/2200hrs to 25.10.2026/2200hrs|
 
 **Why the Mini edition:** the standard Hive install lists 16 GB RAM as its requirement and the Sensor edition needs a separate Hive server to send logs to, so Mini was the best fit for an 8 GB single server.
 
@@ -66,11 +66,11 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 **Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1433
 
-Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
+Top source IPs:(217[.]218[.]34[.]63), (77[.]239[.]124[.]152, (80[.]94[.]95[.]109)
 
 **Credentials attempted (top usernames / passwords):** Usernames:hadoop.Administrator,Admin.steam,devop Password:password,demo,123456,Admin@123,admin123
 
-**Malware or file download attempts:** No
+**Malware or file download attempts:** None observed in the honeypot and Suricata views I reviewed
 
 ![Kibana dashboard](tpot-honeypot-lab/screenshots/kibana-overview.jpg)
 
@@ -107,7 +107,7 @@ Top source IPs:217.218.34.63,77.239.124.152,80.94.95.109
 
 * Write detection ideas based on the observed signatures.
 * Try Zeek or Wazuh for comparison.
-* Add a short incident-style report for one spike.
+* Add a short incident-style report for one source IP.
 
 \---
 
