@@ -66,7 +66,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 **Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1433
 
-Top source IPs:(217[.]218[.]34[.]63), (77[.]239[.]124[.]152, (80[.]94[.]95[.]109)
+Top source IPs:217[.]218[.]34[.]63, 77[.]239[.]124[.]152, 80[.]94[.]95[.]109.
 
 **Credentials attempted (top usernames / passwords):** Usernames:hadoop.Administrator,Admin.steam,devop Password:password,demo,123456,Admin@123,admin123
 
