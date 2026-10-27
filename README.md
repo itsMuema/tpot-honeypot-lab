@@ -93,13 +93,6 @@ The server is deliberately vulnerable-looking, so the management side was locked
 * **Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
 * **What did not happen:** no malware downloads or exploit signatures were observed in the capture window.
 
-### MITRE ATT&CK mapping
-
-| Observed behavior | Technique |
-|-|-|
-| Default and common credential guessing against SSH, RDP and SMB | T1110 Brute Force |
-| Probing of SMB, SSH, RDP and SQL Server ports | T1046 Network Service Discovery |
-| Attempts against remote access services | T1021 Remote Services |
 
 ### Caveats
 
