@@ -19,7 +19,9 @@ Build and secure an internet-facing honeypot, collect real attack data, and prac
 |Resources|8 GB RAM (about 7.2 GiB usable), 150 GB disk|
 |Honeypot platform|T-Pot, Mini edition|
 |Monitoring|Kibana dashboards, T-Pot Attack Map, Suricata IDS|
-|Exposure window|24.10.2026/2200hrs to 25.10.2026/2200hrs|
+|Server Live|24.10.2026 21:30 to 25.10.2026 22:00|
+|Internet exposure (ports open)|24.10.2026 22:00 to 25.10.2026 22:00|
+|Data captured|25.10.2026 15:45 (about 18 hours after the ports opened)|
 
 **Why the Mini edition:** the standard Hive install lists 16 GB RAM as its requirement and the Sensor edition needs a separate Hive server to send logs to, so Mini was the best fit for an 8 GB single server.
 
@@ -41,7 +43,7 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 ![Firewall rules](tpot-honeypot-lab/screenshots/firewall-rules.jpg)
 
-
+**Timeline**
 
 |Time|Event|
 |-|-|
@@ -60,15 +62,17 @@ The server is deliberately vulnerable-looking, so the management side was locked
 
 **Overview**
 
-* Total events in 24 hours: 44346 events
+* Total events in 24 hours: 44346 events,recorded between the ports opening (24.10.2026 22:00) and the evidence capture (25.10.2026 15:45)
+
 
 **Top source countries:** Iran · United States · France· The Netherlands· Romania
 
 **Top targeted services / ports:**  SMB 445, SSH 22, RDP 3389, HTTP 80, SQL Server 1433
 
-Top source IPs:217[.]218[.]34[.]63, 77[.]239[.]124[.]152, 80[.]94[.]95[.]109.
+**Top source IPs:** 217[.]218[.]34[.]63, 77[.]239[.]124[.]152, 80[.]94[.]95[.]109
 
-**Credentials attempted (top usernames / passwords):** Usernames:hadoop.Administrator,Admin.steam,devop Password:password,demo,123456,Admin@123,admin123
+**Top Usernames attempted:** hadoop.Administrator,Admin.steam,devop
+**Top passwords attempted:** password,demo,123456,Admin@123,admin123
 
 **Malware or file download attempts:** None observed in the honeypot and Suricata views I reviewed
 
@@ -90,9 +94,11 @@ Top source IPs:217[.]218[.]34[.]63, 77[.]239[.]124[.]152, 80[.]94[.]95[.]109.
 
 ## 6\. Analysis
 
-* **Noise vs signal:** most traffic came from mass scanners and previously reported IPs, so it was background noise rather than targeted attacks.
-* **Interesting events:** **Credential guessing:** attempts used default and common credentials (`Administrator`, `admin`, `123456`, `admin123`), consistent with automated brute-force tools targeting Windows and generic admin accounts.- **Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
-**What did not happen:** **No malware downloads or exploit signatures were observed** in the 24-hour window.
+* **Noise vs signal:** traffic was spread across many sources with no single source dominating, and the pattern (steady volume around the clock, default credentials, common service ports) points to mass scanners rather than targeted attacks.
+
+**Credential guessing:** attempts used default and common credentials (`Administrator`, `admin`, `123456`, `admin123`), consistent with automated brute-force tools targeting Windows and generic admin accounts.- 
+**Service targeting:** the most probed services were SMB (445), SSH (22), RDP (3389) and SQL Server (1433), the usual remote-access and database targets.
+**What did not happen:** no malware downloads or exploit signatures were observed in the capture window.
 
 * **Caveat:** Suricata alerts are detections, not confirmed compromises.
 
